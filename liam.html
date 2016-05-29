@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, World! • A-Frame</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+    <script src="js/aframe.js"></script>
+  </head>
+  <body>
+
+    <a-scene>
+
+      <a-assets>
+        <img id="shadow2" src="images/radial-shadow-2.png"> 
+      </a-assets>
+      
+      <a-camera near="0.0001" wasd-controls-enabled="true">
+        <a-cursor color="#000"></a-cursor>
+      </a-camera>
+
+      <a-sphere id="orange-cube" color="blue" radius="0.05" position="0 0.0 -1.20">
+        <a-event name="mouseenter" scale="1.1 1.1 1.1" color="red"></a-event>    
+        <a-event name="mouseleave" scale="1 1 1"       color="blue"></a-event>    
+      </a-sphere>
+      <a-cylinder color="red" height="0.5" radius="0.01" position="0 -0.25 -1.20">
+        <a-event name="mouseenter" scale="1.1 1.1 1.1" color="blue"></a-event>    
+        <a-event name="mouseleave" scale="1 1 1"       color="red"></a-event>    
+      </a-cylinder>
+      <a-image id="shadow" position="0 -0.4 -1.2" src="#shadow2" opacity="1" rotation="-90 0 0" scale="0.2 0.2 0.2"></a-image>
+
+      <a-torus color="red" radius="7.0710678118654755" position="0 0 -7.071067811865475" radius-tubular="0.1" opacity="1">
+    <a-event name="mouseenter" scale="1.1 1.1 1.1" color="yellow"></a-event>    
+    <a-event name="mouseleave" scale="1.1 1.1 1.1"       color="red"></a-event>    
+    
+    </a-torus>
+      <a-torus color="blue"  radius="6.427876096865393" position="0 0 -7.66044443118978"   radius-tubular="0.1">
+    <a-event name="mouseenter" scale="1.1 1.1 1.1" color="red"></a-event>    
+    <a-event name="mouseleave" scale="1.1 1.1 1.1"       color="blue"></a-event>    
+    
+    </a-torus>
+      <a-torus color="red"   radius="5.735764363510461" position="0 0 -8.191520442889917"  radius-tubular="0.1">
+   <a-event name="mouseenter" scale="1.1 1.1 1.1" color="blue"></a-event>    
+   <a-event name="mouseleave" scale="1.1 1.1 1.1"       color="red"></a-event>    
+    
+    </a-torus>
+      <a-torus color="blue"   radius="5.000000000000001" position="0 0 -8.660254037844386"  
+      radius-tubular="0.1">
+      <a-event name="mouseenter" scale="1.1 1.1 1.1" color="red"></a-event>    
+      <a-event name="mouseleave" scale="1.1 1.1 1.1"       color="blue"></a-event>    
+           
+    </a-torus>
+    
+      <a-torus color="yellow"   
+               radius="4.2261826174069945" 
+               position="0 0 -9.063077870366499" 
+               radius-tubular="0.1">
+
+        <a-event name="mouseenter" scale="1.1 1.1 1.1" color="red"></a-event>    
+        <a-event name="mouseleave" scale="1.1 1.1 1.1"       color="yellow"></a-event>    
+
+      </a-torus>
+
+      <a-entity position="0 -0.50">
+        <a-sphere radius="10" color="green" scale="1 0.01 1" position="0 0 0" roughness="0.8"></a-plane>
+      </a-entity>
+
+      <a-sky color="#d0ffff"></a-sky>
+      <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
+    </a-scene>
+  </body>
+</html>
+
