@@ -10,16 +10,20 @@
 
     <a-scene>
 
+      <a-assets>
+        <img id="shadow2" src="images/radial-shadow-2.png"> 
+      </a-assets>
+      
       <a-camera near="0.0001" wasd-controls-enabled="true">
         <a-cursor color="#4CC3D9"></a-cursor>
       </a-camera>
 
-      <a-sphere id="orange-cube" color="red" radius="1" position="0 0.5 -5.20">
-        <a-event name="cursor-mouseenter" target="#orange-cube" scale="9 9 9" color="yellow"></a-event>    
-        <a-event name="cursor-mouseleave" scale="1 1 1" color="green"></a-event>    
+      <a-sphere id="orange-cube" color="orange" radius="0.05" position="0 0.0 -1.20">
+        <a-event name="mouseenter" scale="1.1 1.1 1.1" color="red"></a-event>    
+        <a-event name="mouseleave" scale="1 1 1"       color="orange"></a-event>    
       </a-sphere>
       <a-cylinder color="white" height="0.5" radius="0.01" position="0 -0.25 -1.20"></a-cylinder>
-
+      <a-image id="shadow" position="0 -0.4 -1.2" src="#shadow2" opacity="1" rotation="-90 0 0" scale="0.2 0.2 0.2"></a-image>
 
       <a-torus color="red" radius="7.0710678118654755" position="0 0 -7.071067811865475" radius-tubular="0.1" opacity="1"></a-torus>
       <a-torus color="orange"  radius="6.427876096865393" position="0 0 -7.66044443118978"   radius-tubular="0.1"></a-torus>
@@ -27,7 +31,7 @@
       <a-torus color="green"   radius="5.000000000000001" position="0 0 -8.660254037844386"  radius-tubular="0.1"></a-torus>
       <a-torus color="blue"   radius="4.2261826174069945" position="0 0 -9.063077870366499" radius-tubular="0.1"></a-torus>
 
-      <a-entity position="0 -0.5 0">
+      <a-entity position="0 -0.50">
         <a-sphere radius="10" color="green" scale="1 0.01 1" position="0 0 0" roughness="0.8"></a-plane>
       </a-entity>
 
