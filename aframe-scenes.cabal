@@ -1,0 +1,23 @@
+name:                aframe-scenes
+version:             0.1.0.0
+-- synopsis:            
+-- description:         
+license:             BSD3
+license-file:        LICENSE
+author:              Andy Gill
+maintainer:          andygill@ku.edu
+-- copyright:           
+-- category:            
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+executable aframe-scenes
+  main-is:  Main.hs
+  build-depends:         base >=4.8 && <4.9
+                 ,       aframe-blueprint == 0.1.0.0
+                 ,       text == 1.2.*
+  
+  GHC-options: -threaded
+  hs-source-dirs:      scenes/src
+  default-language:    Haskell2010

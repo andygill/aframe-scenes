@@ -1,2 +1,5 @@
 *~
 *.saved
+\#*
+node_modules/
+tmp/

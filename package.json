@@ -1,0 +1,22 @@
+{
+  "name": "aframe-scenes",
+  "version": "1.0.0",
+  "description": "A-Frame Scenes",
+  "private": true,
+  "scripts": {
+    "dev": "budo --dir . --port 8008 --live --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ku-fpg/aframe-scenes"
+  },
+  "author": "Andy Gill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ku-fpg/aframe-scenes/issues"
+  },
+  "homepage": "https://github.com/ku-fpg/aframe-scenes",
+  "devDependencies": {
+    "budo": "^9.2.0"
+  }
+}
