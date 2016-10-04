@@ -11,7 +11,7 @@ AFRAME.registerComponent('toggle-material', {
 	    window.addEventListener('keydown', this.listeners.keydown, false);
 			this.state = 0;
 			this.shaders = ["standard","flat","my-shader"];
-			this.original = true;
+			this.original = false;
 
 			$("[toggle-material]").each(function() {
 				var grab = $($(this).clone().wrap("<div/>").parent().html());
@@ -19,7 +19,8 @@ AFRAME.registerComponent('toggle-material', {
 				grab[0].removeAttribute("toggle-material");
 				grab[0].setAttribute("toggled-material","");
 //				grab[0].setAttribute("scale","1.1 1.1 1.1");
-				grab[0].setAttribute("visible",false);
+				grab[0].setAttribute("visible",true);
+				$(this)[0].setAttribute("visible",false)
 				$(this).after(grab);
 			});
 
@@ -35,20 +36,6 @@ AFRAME.registerComponent('toggle-material', {
 				$("[toggled-material]").each(function() {
 					this.setAttribute("visible",!self.original);
 				});
-/*
-				var f = function(o){ 
-					console.log(this,self.shaders[self.state]);
-					this.setAttribute("material","shader",self.shaders[self.state]);
-				}
-				$("a-box").each(f);
-				$("a-sphere").each(f);
-				$("a-cylinder").each(f);
-				$("a-plane").each(f);
-				self.state++;
-				if (self.state >= self.shaders.length) {
-					self.state = 0;
-				}
-*/
 			}
 	}
 });
@@ -58,9 +45,9 @@ AFRAME.registerShader('my-shader', {
   schema: {
     colorx: {type: 'vec3', default: '0.5 0.5 0.5', is: 'uniform'}
   },
-	//  vertexShader: [
+//  vertexShader: [
 //    'void main() {',
-//    '  gl_Position = projectionMatrix * modelViewMatrix * position;',
+//		'  gl_Position = gl_ProjectionMatrix * gl_ModelViewMatrix * gl_Vertex;',
 //    '}'
 //  ].join('\n'),
   fragmentShader: [
