@@ -43,7 +43,7 @@ AFRAME.registerComponent('toggle-material', {
 
 AFRAME.registerShader('my-shader', {
   schema: {
-    colorx: {type: 'vec3', default: '0.5 0.5 0.5', is: 'uniform'}
+    theColor: {type: 'vec3', default: '0.5 0.5 0.5', is: 'uniform'}
   },
 //  vertexShader: [
 //    'void main() {',
@@ -51,9 +51,9 @@ AFRAME.registerShader('my-shader', {
 //    '}'
 //  ].join('\n'),
   fragmentShader: [
-    'uniform vec3 colorx;',
+    'uniform vec3 theColor;',
     'void main() {',
-    '  gl_FragColor = vec4(colorx, 1.0);',
+    '  gl_FragColor = vec4(theColor, 1.0);',
     '}'
   ].join('\n')
 });
