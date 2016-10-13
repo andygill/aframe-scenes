@@ -40,20 +40,25 @@ AFRAME.registerComponent('toggle-material', {
 	}
 });
 
-
 AFRAME.registerShader('my-shader', {
   schema: {
-    theColor: {type: 'vec3', default: '0.5 0.5 0.5', is: 'uniform'}
+    theColor: {type: 'vec3', default: '0.5 0.5 0.5', is: 'uniform'},
   },
-//  vertexShader: [
-//    'void main() {',
-//		'  gl_Position = gl_ProjectionMatrix * gl_ModelViewMatrix * gl_Vertex;',
-//    '}'
-//  ].join('\n'),
+  vertexShader: [
+		'varying vec3 vNormal;',
+    'void main() {',
+		'  vec3 objectNormal = vec3( normal );',
+		'  vec3 transformedNormal = normalMatrix * objectNormal;',
+		'  vNormal = normalize( transformedNormal );',
+		'  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);',
+    '}'
+  ].join('\n'),
   fragmentShader: [
+		'varying vec2 UV;',
+		'varying vec3 vNormal;',
     'uniform vec3 theColor;',
     'void main() {',
-    '  gl_FragColor = vec4(theColor, 1.0);',
+    '  gl_FragColor = linearToOutputTexel(vec4(theColor, 1.0));',
     '}'
   ].join('\n')
 });
