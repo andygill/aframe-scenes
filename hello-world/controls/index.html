@@ -5,6 +5,7 @@
     <title>Hello, World! • A-Frame</title>
     <meta name="description" content="Hello, World! • A-Frame">
     <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>    
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v2.6.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -15,8 +16,8 @@
       <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 
       <a-sky color="#ECECEC"></a-sky>
-      <a-entity position="0 0 3.8">
-        <a-camera></a-camera>
+      <a-entity position="0 1.6 3.8">
+        <a-entity camera universal-controls></a-entity>
       </a-entity>
 
     </a-scene>
