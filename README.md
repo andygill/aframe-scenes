@@ -14,7 +14,7 @@ This runs the web server, and opens the browser with a landing page, `index.html
 
 From aframe examples
 
-## Painters Template
+### Painters Template
 
 From ???
 
